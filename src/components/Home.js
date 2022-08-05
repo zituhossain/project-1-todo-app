@@ -5,7 +5,7 @@ const dummyTodos = [
     {
         id: 1,
         title: 'todo 1',
-        description: 'todo description 1 go on...'
+        description: 'todo description 1 go on............'
     },
     {
         id: 2,
