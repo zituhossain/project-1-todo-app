@@ -6,7 +6,7 @@ const Todo = (props) => {
   const { title, desc } = props.todo;
   const { id } = props;
   const handleClick = (id) => {
-    alert(id);
+    props.onRemoveTodo(id);
   };
   return (
     <article className={style.todo}>
