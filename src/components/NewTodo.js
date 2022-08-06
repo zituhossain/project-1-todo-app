@@ -2,22 +2,23 @@ import React, { useState } from "react";
 
 import style from "./style/newtodo.module.css";
 
-const NewTodo = () => {
+const NewTodo = (props) => {
   const [todo, setTodo] = useState({ title: "", desc: "" });
   const { title, desc } = todo;
 
-  const handleChange = (evt) => {
-    const name = evt.target.name;
+  const handleChange = (event) => {
+    const name = event.target.name;
     setTodo((oldTodo) => {
-      return { ...oldTodo, [name]: evt.target.value };
+      return { ...oldTodo, [name]: event.target.value };
     });
   };
 
-  const handleSubmit = (evt) => {
-    evt.preventDefault();
-    console.log(todo);
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    props.onAddTodo(todo);
     setTodo({ title: "", desc: "" });
   };
+
 
   return (
     <>
